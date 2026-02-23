@@ -161,6 +161,34 @@ From workflow orchestration guidelines:
 - For complex problems, throw more compute at it via subagents
 - One task per subagent for focused execution
 
+### 7. Security Audit Cadence
+**Every 10 commits:** Run OWASP Top 10 security checks and implement fixes
+
+**Process:**
+1. Check commit count: `git log --oneline | wc -l`
+2. If divisible by 10, trigger security audit
+3. Run comprehensive checks:
+   - SQL Injection vulnerabilities
+   - XSS (Cross-Site Scripting)
+   - Authentication/Authorization flaws
+   - Sensitive data exposure
+   - Security misconfiguration
+   - npm audit vulnerabilities
+   - Rate limiting effectiveness
+   - Input validation
+4. Create issues/tasks for all findings
+5. Fix Critical and High severity issues immediately
+6. Schedule Medium/Low issues for next sprint
+
+**Tools:**
+```bash
+npm audit
+npm audit fix
+# Manual code review for OWASP Top 10
+# Check for hardcoded secrets/credentials
+# Verify authentication middleware coverage
+```
+
 ---
 
 ## Next Session Review
