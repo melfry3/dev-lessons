@@ -1,0 +1,17 @@
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Machine-specific
+local-notes.md
+scratch.md
